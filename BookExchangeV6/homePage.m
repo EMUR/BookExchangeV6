@@ -7,8 +7,6 @@
 //
 
 #import "homePage.h"
-#import "buyingCategories.h"
-#import "sellingCategories.h"
 
 @interface homePage ()
 
@@ -29,8 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   NSLog(@"(Home Page)Username is %@",self.user.username);
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,22 +35,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setUser:(USER*)newUser{
-    if(_user != newUser){_user = newUser;}
-}
-
+/*
  #pragma mark - Navigation
  
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-     if ([[segue identifier] isEqualToString:@"buyingCategories"]) {
-         [[segue destinationViewController] setUser:_user];
-     }
-     if ([[segue identifier] isEqualToString:@"sellingCategories"]) {
-         [[segue destinationViewController] setUser:_user];
-     }
-     
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
  }
-
+ */
 
 @end
 

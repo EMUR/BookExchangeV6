@@ -8,7 +8,6 @@
 
 #import "sellingCategories.h"
 #import "buyingCategories.h"
-#import "selectedSellingCategory.h"
 
 
 @interface sellingCategories ()
@@ -38,8 +37,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSLog(@"(SellingCategories Page)Username is %@",self.user.username);
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +65,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    /*
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+     
+     // Configure the cell...
+     
+     return cell;
+     */
     static NSString *categoryCell = @"categoryCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCell];
@@ -82,9 +85,6 @@
     
 }
 
--(void)setUser:(USER*)newUser{
-    if(_user != newUser){_user = newUser;}
-}
 
 /*
  // Override to support conditional editing of the table view.
@@ -124,14 +124,16 @@
  }
  */
 
-
+/*
  #pragma mark - Navigation
  
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
- if ([[segue identifier] isEqualToString:@"selectSellingCategory"]) {
- [[segue destinationViewController] setUser:_user];
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
  }
- }
+ */
 
 
 

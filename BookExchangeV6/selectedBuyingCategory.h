@@ -7,13 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "USER.h"
-
-@class DetailedBookView;
 
 @interface selectedBuyingCategory : UITableViewController
-
-@property (strong, nonatomic) USER* user;
-@property (strong,nonatomic) DetailedBookView* detailBookView;
 
 @end

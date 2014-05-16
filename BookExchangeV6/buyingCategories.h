@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "USER.h"
-
-@class selectedBuyingCategory;
 
 @interface buyingCategories : UITableViewController
 
-@property (strong, nonatomic) USER* user;
-@property (strong, nonatomic) selectedBuyingCategory* selctedBuyingCategory;
 +(NSArray*)allCategories;
 
 

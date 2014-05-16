@@ -32,7 +32,6 @@
 		B1EF9DFA19237A64005C282B /* sellingCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DF919237A64005C282B /* sellingCategories.m */; };
 		B1EF9DFD19237B6C005C282B /* selectedBuyingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DFC19237B6C005C282B /* selectedBuyingCategory.m */; };
 		B1EF9E0019237B99005C282B /* selectedSellingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DFF19237B99005C282B /* selectedSellingCategory.m */; };
-		B1EF9E0319261765005C282B /* DetailedBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9E0219261765005C282B /* DetailedBookView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +83,6 @@
 		B1EF9DFC19237B6C005C282B /* selectedBuyingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectedBuyingCategory.m; sourceTree = "<group>"; };
 		B1EF9DFE19237B99005C282B /* selectedSellingCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectedSellingCategory.h; sourceTree = "<group>"; };
 		B1EF9DFF19237B99005C282B /* selectedSellingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectedSellingCategory.m; sourceTree = "<group>"; };
-		B1EF9E0119261765005C282B /* DetailedBookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedBookView.h; sourceTree = "<group>"; };
-		B1EF9E0219261765005C282B /* DetailedBookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedBookView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +142,6 @@
 		B1EF9DB019236DE1005C282B /* BookExchangeV6 */ = {
 			isa = PBXGroup;
 			children = (
-				B1EF9DBC19236DE1005C282B /* Main_iPhone.storyboard */,
-				B1EF9DBF19236DE1005C282B /* Main_iPad.storyboard */,
-				B1EF9E0119261765005C282B /* DetailedBookView.h */,
-				B1EF9E0219261765005C282B /* DetailedBookView.m */,
 				B1EF9DFB19237B6C005C282B /* selectedBuyingCategory.h */,
 				B1EF9DFC19237B6C005C282B /* selectedBuyingCategory.m */,
 				B1EF9DFE19237B99005C282B /* selectedSellingCategory.h */,
@@ -169,6 +162,8 @@
 				B1EF9DE619236F22005C282B /* NewUserPage.m */,
 				B1EF9DB919236DE1005C282B /* AppDelegate.h */,
 				B1EF9DBA19236DE1005C282B /* AppDelegate.m */,
+				B1EF9DBC19236DE1005C282B /* Main_iPhone.storyboard */,
+				B1EF9DBF19236DE1005C282B /* Main_iPad.storyboard */,
 				B1EF9DC219236DE1005C282B /* ViewController.h */,
 				B1EF9DC319236DE1005C282B /* ViewController.m */,
 				B1EF9DC519236DE1005C282B /* Images.xcassets */,
@@ -313,7 +308,6 @@
 				B1EF9DFD19237B6C005C282B /* selectedBuyingCategory.m in Sources */,
 				B1EF9E0019237B99005C282B /* selectedSellingCategory.m in Sources */,
 				B1EF9DBB19236DE1005C282B /* AppDelegate.m in Sources */,
-				B1EF9E0319261765005C282B /* DetailedBookView.m in Sources */,
 				B1EF9DF019237559005C282B /* USER.m in Sources */,
 				B1EF9DE719236F22005C282B /* NewUserPage.m in Sources */,
 				B1EF9DEA192374E2005C282B /* homePage.m in Sources */,
