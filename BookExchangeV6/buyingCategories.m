@@ -7,6 +7,7 @@
 //
 
 #import "buyingCategories.h"
+#import "selectedBuyingCategory.h"
 
 
 @interface buyingCategories ()
@@ -19,7 +20,7 @@
 @implementation buyingCategories
 
 +(NSArray*)allCategories{
-    NSArray *allCats = [NSArray arrayWithObjects:@"Accounting",@"Administration of Justice",@"Anthropology",@"Arts",@"Astronomy",@"Automotive Technology",@"Biologoy",@"Buisness",@"Cantonese",@"Career Life Planning",@"Chemistry",@"Child Development",@"Computer Aided Design",@"Computer Information System",@"Counseling",@"Dance",@"Economics",@"Education",@"Engeineering",@"ESL",@"English",@"Enviromental Science",@"Film and Television",@"French",@"Geography",@"Geology",@"German",@"Guidance",@"Health Technology",@"Health",@"Hindi",@"History",@"Human Development",@"Humanities",@"Intercultural Studies",@"International Studies",@"Italian",@"Japanese",@"Journalism",@"Korean",@"Language Arts",@"Learning Assistance",@"Librarty",@"Linguistics",@"Mandarin",@"Manufacturing",@"Mathematics",@"Meterology",@"Music",@"Nursing",@"Nutrition",@"Paralegal",@"Persian",@"Philosophy",@"Photography",@"Physical Education",@"Physics",@"Political Science",@"Pyschology",@"Reading",@"Real Estate",@"Russian",@"Sign Language",@"Skills",@"Social Science",@"Sociology",@"Spanish",@"Speech",@"Theater Arts",@"Vietnamese",@"Women Studies",@"Misc", nil];
+    NSArray *allCats = [NSArray arrayWithObjects:@"All Books",@"Accounting",@"Administration of Justice",@"Anthropology",@"Arts",@"Astronomy",@"Automotive Technology",@"Biologoy",@"Buisness",@"Cantonese",@"Career Life Planning",@"Chemistry",@"Child Development",@"Computer Aided Design",@"Computer Information System",@"Counseling",@"Dance",@"Economics",@"Education",@"Engeineering",@"ESL",@"English",@"Enviromental Science",@"Film and Television",@"French",@"Geography",@"Geology",@"German",@"Guidance",@"Health Technology",@"Health",@"Hindi",@"History",@"Human Development",@"Humanities",@"Intercultural Studies",@"International Studies",@"Italian",@"Japanese",@"Journalism",@"Korean",@"Language Arts",@"Learning Assistance",@"Librarty",@"Linguistics",@"Mandarin",@"Manufacturing",@"Mathematics",@"Meterology",@"Music",@"Nursing",@"Nutrition",@"Paralegal",@"Persian",@"Philosophy",@"Photography",@"Physical Education",@"Physics",@"Political Science",@"Pyschology",@"Reading",@"Real Estate",@"Russian",@"Sign Language",@"Skills",@"Social Science",@"Sociology",@"Spanish",@"Speech",@"Theater Arts",@"Vietnamese",@"Women Studies",@"Misc", nil];
     return allCats;
 }
 
@@ -42,7 +43,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"(BuyingCategories Page)Username is %@",self.user.username);
     
+    //This is a test book just to test certian segues
+    BOOK *testBook = [[BOOK alloc]init];
+    testBook.bookName = @"testbook";
+    testBook.author = @"testauthor";
+    _user.buyingBooks = [[NSMutableArray alloc] init];
+    [_user.buyingBooks insertObject:testBook atIndex:0];
+
+    NSLog(@"%d",[_user.buyingBooks count]);
     
 }
 
@@ -72,15 +82,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-     static NSString *cellIdentifier = @"Cell";
-     UITableViewCell *cell = (UITableViewCell *) [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-     if(cell == nil){
-     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-     }
-     cell.textLabel.text = @"Detail";
-     return cell;
-     */
+
     static NSString *categoryCell = @"categoryCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCell];
@@ -134,31 +136,14 @@
  }
  */
 
-/*
+
  #pragma mark - Navigation
  
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+     if ([[segue identifier] isEqualToString:@"selectBuyingCategory"]) {
+         [[segue destinationViewController] setUser:_user];
+    }
  }
- */
-
-/*
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
- {
- [self performSegueWithIdentifier:@"categorySegue" sender:indexPath];
- }
- 
- 
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
- {
- UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
- 
- [self performSegueWithIdentifier:@"categorySegue" sender:cell];
- }
- */
 
 
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USER.h"
 
 @interface selectedSellingCategory : UITableViewController
+
+@property (strong, nonatomic) USER* user;
 
 @end
