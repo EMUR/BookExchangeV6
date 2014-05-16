@@ -26,8 +26,6 @@
 		B1EF9DEA192374E2005C282B /* homePage.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DE9192374E2005C282B /* homePage.m */; };
 		B1EF9DED19237528005C282B /* BOOK.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DEC19237528005C282B /* BOOK.m */; };
 		B1EF9DF019237559005C282B /* USER.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DEF19237559005C282B /* USER.m */; };
-		B1EF9DF21923758C005C282B /* Buying_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EF9DF11923758C005C282B /* Buying_button.png */; };
-		B1EF9DF419237594005C282B /* Selling_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EF9DF319237594005C282B /* Selling_button.png */; };
 		B1EF9DF719237607005C282B /* buyingCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DF619237607005C282B /* buyingCategories.m */; };
 		B1EF9DFA19237A64005C282B /* sellingCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DF919237A64005C282B /* sellingCategories.m */; };
 		B1EF9DFD19237B6C005C282B /* selectedBuyingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF9DFC19237B6C005C282B /* selectedBuyingCategory.m */; };
@@ -74,8 +72,6 @@
 		B1EF9DEC19237528005C282B /* BOOK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOOK.m; sourceTree = "<group>"; };
 		B1EF9DEE19237559005C282B /* USER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USER.h; sourceTree = "<group>"; };
 		B1EF9DEF19237559005C282B /* USER.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USER.m; sourceTree = "<group>"; };
-		B1EF9DF11923758C005C282B /* Buying_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Buying_button.png; path = ../../../../Desktop/Buying_button.png; sourceTree = "<group>"; };
-		B1EF9DF319237594005C282B /* Selling_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Selling_button.png; path = ../../../../Desktop/Selling_button.png; sourceTree = "<group>"; };
 		B1EF9DF519237607005C282B /* buyingCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buyingCategories.h; sourceTree = "<group>"; };
 		B1EF9DF619237607005C282B /* buyingCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buyingCategories.m; sourceTree = "<group>"; };
 		B1EF9DF819237A64005C282B /* sellingCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sellingCategories.h; sourceTree = "<group>"; };
@@ -112,6 +108,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B15479D31926BE8500ACDF06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF9DE519236F22005C282B /* NewUserPage.h */,
+				B1EF9DE619236F22005C282B /* NewUserPage.m */,
+				B1EF9DC219236DE1005C282B /* ViewController.h */,
+				B1EF9DC319236DE1005C282B /* ViewController.m */,
+				B1EF9DE8192374E2005C282B /* homePage.h */,
+				B1EF9DE9192374E2005C282B /* homePage.m */,
+				B1EF9E0119261765005C282B /* DetailedBookView.h */,
+				B1EF9E0219261765005C282B /* DetailedBookView.m */,
+				B1EF9DFB19237B6C005C282B /* selectedBuyingCategory.h */,
+				B1EF9DFC19237B6C005C282B /* selectedBuyingCategory.m */,
+				B1EF9DFE19237B99005C282B /* selectedSellingCategory.h */,
+				B1EF9DFF19237B99005C282B /* selectedSellingCategory.m */,
+				B1EF9DF819237A64005C282B /* sellingCategories.h */,
+				B1EF9DF919237A64005C282B /* sellingCategories.m */,
+				B1EF9DF519237607005C282B /* buyingCategories.h */,
+				B1EF9DF619237607005C282B /* buyingCategories.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B15479D41926BEA900ACDF06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF9DEE19237559005C282B /* USER.h */,
+				B1EF9DEF19237559005C282B /* USER.m */,
+				B1EF9DEB19237528005C282B /* BOOK.h */,
+				B1EF9DEC19237528005C282B /* BOOK.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B1EF9D9E19236DE1005C282B = {
 			isa = PBXGroup;
 			children = (
@@ -147,30 +177,8 @@
 			children = (
 				B1EF9DBC19236DE1005C282B /* Main_iPhone.storyboard */,
 				B1EF9DBF19236DE1005C282B /* Main_iPad.storyboard */,
-				B1EF9E0119261765005C282B /* DetailedBookView.h */,
-				B1EF9E0219261765005C282B /* DetailedBookView.m */,
-				B1EF9DFB19237B6C005C282B /* selectedBuyingCategory.h */,
-				B1EF9DFC19237B6C005C282B /* selectedBuyingCategory.m */,
-				B1EF9DFE19237B99005C282B /* selectedSellingCategory.h */,
-				B1EF9DFF19237B99005C282B /* selectedSellingCategory.m */,
-				B1EF9DF819237A64005C282B /* sellingCategories.h */,
-				B1EF9DF919237A64005C282B /* sellingCategories.m */,
-				B1EF9DF519237607005C282B /* buyingCategories.h */,
-				B1EF9DF619237607005C282B /* buyingCategories.m */,
-				B1EF9DF319237594005C282B /* Selling_button.png */,
-				B1EF9DF11923758C005C282B /* Buying_button.png */,
-				B1EF9DEE19237559005C282B /* USER.h */,
-				B1EF9DEF19237559005C282B /* USER.m */,
-				B1EF9DE8192374E2005C282B /* homePage.h */,
-				B1EF9DE9192374E2005C282B /* homePage.m */,
-				B1EF9DEB19237528005C282B /* BOOK.h */,
-				B1EF9DEC19237528005C282B /* BOOK.m */,
-				B1EF9DE519236F22005C282B /* NewUserPage.h */,
-				B1EF9DE619236F22005C282B /* NewUserPage.m */,
-				B1EF9DB919236DE1005C282B /* AppDelegate.h */,
-				B1EF9DBA19236DE1005C282B /* AppDelegate.m */,
-				B1EF9DC219236DE1005C282B /* ViewController.h */,
-				B1EF9DC319236DE1005C282B /* ViewController.m */,
+				B15479D41926BEA900ACDF06 /* Model */,
+				B15479D31926BE8500ACDF06 /* Views */,
 				B1EF9DC519236DE1005C282B /* Images.xcassets */,
 				B1EF9DB119236DE1005C282B /* Supporting Files */,
 			);
@@ -180,6 +188,8 @@
 		B1EF9DB119236DE1005C282B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B1EF9DB919236DE1005C282B /* AppDelegate.h */,
+				B1EF9DBA19236DE1005C282B /* AppDelegate.m */,
 				B1EF9DB219236DE1005C282B /* BookExchangeV6-Info.plist */,
 				B1EF9DB319236DE1005C282B /* InfoPlist.strings */,
 				B1EF9DB619236DE1005C282B /* main.m */,
@@ -283,8 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EF9DC119236DE1005C282B /* Main_iPad.storyboard in Resources */,
-				B1EF9DF21923758C005C282B /* Buying_button.png in Resources */,
-				B1EF9DF419237594005C282B /* Selling_button.png in Resources */,
 				B1EF9DC619236DE1005C282B /* Images.xcassets in Resources */,
 				B1EF9DBE19236DE1005C282B /* Main_iPhone.storyboard in Resources */,
 				B1EF9DB519236DE1005C282B /* InfoPlist.strings in Resources */,
