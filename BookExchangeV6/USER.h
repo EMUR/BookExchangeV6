@@ -11,6 +11,7 @@
 
 @interface USER : NSObject
 
+// This is a comment
 @property (strong) NSString *username;
 @property (strong) NSString *userID;
 @property (strong) NSString *firstName;
