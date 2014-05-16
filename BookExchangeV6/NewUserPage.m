@@ -7,11 +7,13 @@
 //
 
 #import "NewUserPage.h"
+#import "ViewController.h"
 #include <objc/runtime.h>
 
-@interface NewUserPage ()
 
+@interface NewUserPage () 
 
+@property BOOL validUser;
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameInput;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameInput;
@@ -21,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneInput;
 @property (weak, nonatomic) IBOutlet UITextField *facebookInput;
 @property (weak, nonatomic) IBOutlet UITextField *twitterInput;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scroller;
@@ -114,37 +119,22 @@
     
     // [self checkBadInputs:self];
     
-    bool hasBadChar = [self checkForBadChars:self.userNameInput.text];
-    bool hasBadNum = [self checkForBadNum:self.phoneInput.text];
-    
-    
-    if ([self.userNameInput.text  isEqual: @""] || hasBadChar) {
-        [self textFieldInvalid:self.userNameInput];
-    }else{
-        [self textFieldNormal:self.userNameInput];
+    if(!_user){
+        _user = [[USER alloc] init];
     }
+    _user.username = self.userNameInput.text;
+    _user.firstName = self.firstNameInput.text;
+    _user.lastName = self.lastNameInput.text;
+    _user.email = self.emailInput.text;
+    _user.userID = self.deAnzaInput.text;
     
-    if ([self.firstNameInput.text  isEqual: @""]) {
-        [self textFieldInvalid:self.firstNameInput];
-    }
+     //NSLog(@"Username input is %@",self.userNameInput.text);
+    self.testLabel.text = _user.username ;
+    self.userNameInput.text = _user.username;
+   
+    //[self performSegueWithIdentifier:@"createdNewUser" sender:self];
+
     
-    if ([self.lastNameInput.text  isEqual: @""]) {
-        [self textFieldInvalid:self.lastNameInput];
-    }
-    
-    if ([self.phoneInput.text  isEqual: @""] || hasBadNum) {
-        [self textFieldInvalid:self.phoneInput];
-    }else{
-        [self textFieldNormal:self.phoneInput];
-    }
-    
-    if ([self.deAnzaInput.text  isEqual: @""]) {
-        [self textFieldInvalid:self.deAnzaInput];
-    }
-    
-    if ([self.emailInput.text  isEqual: @""]) {
-        [self textFieldInvalid:self.emailInput];
-    }
     
     
 }
@@ -153,15 +143,16 @@
 
 
 
-/*
+
  #pragma mark - Navigation
  
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+     if ([[segue identifier] isEqualToString:@"createdNewUser"]) {
+         [[segue destinationViewController] setUser:_user];
+
+     }
  }
- */
+ 
 
 @end

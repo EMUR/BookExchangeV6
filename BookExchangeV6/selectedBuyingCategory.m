@@ -7,6 +7,7 @@
 //
 
 #import "selectedBuyingCategory.h"
+#import "DetailedBookView.h"
 
 @interface selectedBuyingCategory ()
 
@@ -32,6 +33,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"(selectedBuyingCategory Page)Username is %@",self.user.username);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,16 +47,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_user.buyingBooks count];
+}
+
+-(void)setUser:(USER*)newUser{
+    if(_user != newUser){_user = newUser;}
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    static NSString *bookCell = @"bookCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookCell];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookCell];
+    }
+    BOOK *currBook = [_user.buyingBooks objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = currBook.bookName;
+    return cell;
 }
 
 /*
@@ -105,15 +128,13 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+ if ([[segue identifier] isEqualToString:@"viewBookDetails"]) {
+ [[segue destinationViewController] setBook:[_user.buyingBooks objectAtIndex:0]];
+ }
+ }
 
 @end

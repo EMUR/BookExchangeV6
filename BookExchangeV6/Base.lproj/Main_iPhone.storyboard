@@ -81,10 +81,11 @@
                                         </state>
                                         <connections>
                                             <action selector="createUser:" destination="mYk-WK-t5i" eventType="touchUpInside" id="CYV-pb-6RG"/>
+                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="createdNewUser" id="4mX-OQ-LJl"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OC5-ts-2gu">
-                                        <rect key="frame" x="134" y="514" width="42" height="21"/>
+                                        <rect key="frame" x="56" y="514" width="197" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
@@ -178,6 +179,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
+                        <outlet property="createUserButton" destination="Cci-NU-JEO" id="wsP-Bw-FGL"/>
                         <outlet property="deAnzaInput" destination="RuX-XW-8WV" id="oOB-x9-aqW"/>
                         <outlet property="emailInput" destination="UOc-XT-BXK" id="g8J-aW-hHR"/>
                         <outlet property="facebookInput" destination="RfM-2P-ZhR" id="PuF-Gw-PTc"/>
@@ -185,6 +187,7 @@
                         <outlet property="lastNameInput" destination="4QM-TX-ADU" id="XUS-7h-moq"/>
                         <outlet property="phoneInput" destination="mLg-PI-OIb" id="vhQ-Sv-ZiH"/>
                         <outlet property="scroller" destination="Hpz-uH-Ogd" id="Kuy-qg-MQX"/>
+                        <outlet property="testLabel" destination="OC5-ts-2gu" id="WAT-kQ-esg"/>
                         <outlet property="twitterInput" destination="yVy-tr-BDU" id="1OM-JT-dkO"/>
                         <outlet property="userNameInput" destination="rsB-Sc-Etq" id="N4H-6L-dW7"/>
                     </connections>
@@ -239,7 +242,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cEN-ZS-jsx" kind="push" id="NDV-2D-9Az"/>
+                                    <segue destination="cEN-ZS-jsx" kind="push" identifier="logIn" id="NDV-2D-9Az"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RTx-Ja-5Wd">
@@ -276,7 +279,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="v21-bl-pEB" kind="push" id="PFb-ht-Dl9"/>
+                                    <segue destination="v21-bl-pEB" kind="push" identifier="buyingCategories" id="PFb-ht-Dl9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9zM-rv-1jV">
@@ -286,7 +289,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wYE-dX-1hE" kind="push" id="Uag-qY-8vd"/>
+                                    <segue destination="wYE-dX-1hE" kind="push" identifier="sellingCategories" id="Uag-qY-8vd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -315,7 +318,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Vz0-ir-xXR" kind="push" id="eah-tt-7Ci"/>
+                                    <segue destination="Vz0-ir-xXR" kind="push" identifier="selectBuyingCategory" id="eah-tt-7Ci"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -324,7 +327,18 @@
                             <outlet property="delegate" destination="v21-bl-pEB" id="Yjj-JS-Uib"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7bN-6y-9YE"/>
+                    <navigationItem key="navigationItem" id="7bN-6y-9YE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="CQd-XN-6pM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sk2-4S-fEx">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Add Book">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="no9-RU-YQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,7 +361,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="EQ7-Md-Lll" kind="push" id="xeM-gJ-rZV"/>
+                                    <segue destination="EQ7-Md-Lll" kind="push" identifier="selectSellingCategory" id="xeM-gJ-rZV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -356,7 +370,18 @@
                             <outlet property="delegate" destination="wYE-dX-1hE" id="MvK-wW-4Fe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9mF-0n-jVB"/>
+                    <navigationItem key="navigationItem" id="9mF-0n-jVB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="PUS-yN-GLH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g8G-Ui-kjK">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Add Book">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCl-O8-11F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,7 +397,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pYQ-RO-oLE">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pYQ-RO-oLE" id="vJQ-Oc-BAV">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -400,13 +425,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fuS-ci-z1P">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bookCell" id="fuS-ci-z1P">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fuS-ci-z1P" id="sdx-6M-7WL">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="QVP-rk-LFv" kind="push" identifier="viewBookDetails" id="Owe-54-RBt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -419,6 +447,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wu-IV-Peu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1983" y="60"/>
+        </scene>
+        <!--Detailed Book View-->
+        <scene sceneID="EHQ-oI-V8X">
+            <objects>
+                <viewController id="QVP-rk-LFv" customClass="DetailedBookView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03z-a0-rlI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K1r-9F-jKg">
+                                <rect key="frame" x="48" y="112" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bra-G7-JGg">
+                                <rect key="frame" x="48" y="167" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tlO-ds-K8p"/>
+                    <connections>
+                        <outlet property="testAuthorName" destination="bra-G7-JGg" id="RIV-qN-vdH"/>
+                        <outlet property="testBookName" destination="K1r-9F-jKg" id="Soz-e8-GYC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1BU-pr-UHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2435" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MjU-23-kvA">
@@ -448,4 +511,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="4mX-OQ-LJl"/>
+    </inferredMetricsTieBreakers>
 </document>
